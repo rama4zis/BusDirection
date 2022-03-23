@@ -11,3 +11,6 @@ EX : [
 
 > npm run dev
 
+## How to use
+
+Open on local server port 9000
