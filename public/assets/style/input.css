@@ -67,7 +67,7 @@
   }
 
   .urban-list {
-    @apply absolute flex flex-wrap max-h-40 overflow-x-hidden overflow-y-scroll;
+    @apply absolute w-[75vh] flex flex-wrap max-h-40 overflow-x-hidden overflow-y-scroll;
     /* align-content: middle; */
   }
 
