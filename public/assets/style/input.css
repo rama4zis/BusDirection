@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Bubble Messages */
+
+  .messages {
+    @apply w-full block;
+    /* margin-top: 1rem; */
+  }
+
+  .bubble {
+    @apply bg-slate-400 max-w-[35%] inline-block p-6 mb-1 rounded-full translate-x-[-100%] opacity-0;
+    /* transform: translateX(-200px); */
+  }
+
+  .message {
+    @apply text-white text-2xl font-medium;
+  }
+
+  .message a {
+    @apply underline text-blue-500;
+  }
+
+  .button-container {
+    @apply text-center pt-10 opacity-0;
+  }
+
+  .main-menu-button {
+    @apply rounded bg-blue-500 hover:bg-blue-700 py-2 px-4 text-white;
+  }
+
+  body {
+    @apply bg-gray-800 h-screen w-screen box-border m-0;
+  }
+
+  .content-wrapper {
+    @apply h-full flex flex-col justify-center gap-10 opacity-0 pt-10;
+  }
+
+  .form-wrapper {
+    @apply w-1/2 bg-slate-400;
+    margin: 0 auto;
+  }
+
+  .input-wrap {
+    @apply w-full p-4 grid justify-center items-center text-center;
+  }
+
+  .input-wrap input {
+    @apply p-2 w-[75vh];
+  }
+
+  .nomor1 {
+    /* @apply bg-slate-400; */
+  }
+
+  .nomor2 {
+    /* @apply bg-slate-300; */
+  }
+
+  .urban-list-container {
+    @apply relative w-[75vh];
+    /* transform: scaleY(0); */
+    /* visibility: hidden; */
+  }
+
+  .urban-list {
+    @apply absolute flex flex-wrap max-h-40 overflow-x-hidden overflow-y-scroll;
+    /* align-content: middle; */
+  }
+
+  .urban {
+    @apply cursor-pointer p-3 bg-slate-100 w-full;
+    transition: 0.5s ease;
+  }
+
+  .urban:hover {
+    @apply bg-slate-400;
+  }
+
+  .data-submit {
+    @apply bg-slate-200 cursor-pointer;
+    width: 30vh !important;
+    transition: 0.5s;
+  }
+
+  .data-submit:hover {
+    @apply bg-slate-400;
+  }
+
+  .map-container {
+    @apply relative w-full h-[75vh] mb-8;
+  }
+
+  #map {
+    @apply w-[50%] h-full;
+    margin: 0 auto;
+  }
+
+  .custom-map-control-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    height: 40px;
+    cursor: pointer;
+  }
+  .custom-map-control-button:hover {
+    background: #ebebeb;
+  }
+
+  .hide {
+    @apply hidden;
+  }
+}
