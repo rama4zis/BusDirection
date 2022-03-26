@@ -13,6 +13,3 @@ EX : [
 
 > npm run start-dev
 
-## How to use
-
-Open on local server port 9000
