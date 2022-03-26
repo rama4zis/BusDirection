@@ -9,7 +9,9 @@ EX : [
 ## How To Run
 > npm install
 
-> npm run dev
+> npm run build
+
+> npm run start-dev
 
 ## How to use
 

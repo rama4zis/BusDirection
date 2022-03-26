@@ -8,7 +8,7 @@
     "dev": "tailwindcss -i ./public/assets/style/input.css -o ./public/assets/style/style.css && webpack && webpack serve --mode=development",
     "css": "tailwindcss -i ./public/assets/style/input.css -o ./public/assets/style/style.css",
     "start-dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "tailwindcss -i ./public/assets/style/input.css -o ./public/assets/style/style.css && webpack --config webpack.prod.js"
   },
   "author": "Rama Aditya Saputra",
   "license": "ISC",
