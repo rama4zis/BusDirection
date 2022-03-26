@@ -1,9 +1,13 @@
-function main() {
+const mainContainer = document.querySelector("main-container");
+let shadowroot = mainContainer.shadowRoot;
+
+if (mainContainer) {
+
     const baseUrl = "https://kodepos.now.sh";
     var dataKota = [];
     var dataKotaFix = [];
-    const searchValue = document.getElementById("search-value");
-    const searchValueTarget = document.getElementById("search-value-target");
+    const searchValue = shadowroot.getElementById("search-value");
+    const searchValueTarget = shadowroot.getElementById("search-value-target");
 
 
 
@@ -40,7 +44,7 @@ function main() {
                     }
                     dataKota[i] = null;
                 }
-                
+
                 generateUrbanList(dataKotaFix, target);
             }
         } catch (error) {
@@ -50,7 +54,7 @@ function main() {
 
     const generateUrbanList = (kotaArray, target) => {
         clearUrbanList();
-        let urbanList = document.getElementById(`${target}`);
+        let urbanList = shadowroot.getElementById(`${target}`);
 
         const kotaArrayLength = kotaArray.length;
 
@@ -68,7 +72,7 @@ function main() {
     };
 
     const clearUrbanList = () => {
-        const urbanList = document.querySelectorAll('.urban-list');
+        const urbanList = shadowroot.querySelectorAll('.urban-list');
         for (var i = 0; i < urbanList.length; i++) {
             urbanList[i].innerHTML = "";
         }
@@ -90,10 +94,10 @@ function main() {
         clearUrbanList();
     };
 
-    var urbanItem = document.getElementById("urban-pick");
+    var urbanItem = shadowroot.getElementById("urban-pick");
     urbanItem.addEventListener('click', addValueToSearchValue);
 
-    var urbanItemTarget = document.getElementById("urban-target");
+    var urbanItemTarget = shadowroot.getElementById("urban-target");
     urbanItemTarget.addEventListener('click', addValueToSearchValueTarget);
 
     searchValue.addEventListener('input', (e) => {
@@ -119,13 +123,5 @@ function main() {
         }
     };
 
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-        console.log("DOM loaded");
-
-    });
+    console.log("Data Geo Ok");
 }
-
-export default main;

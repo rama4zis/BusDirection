@@ -1,3 +1,6 @@
+const shadowContainer = document.querySelector("main-container").shadowRoot;
+// const shadowView = document.querySelector("map-view");
+
 function initMap() {
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -17,7 +20,7 @@ function initMap() {
 
     // document.getElementById("start").addEventListener("change", onChangeHandler);
     // document.getElementById("end").addEventListener("change", onChangeHandler);
-    document.querySelector("#submitForm").addEventListener("submit", (e) => {
+    shadowContainer.querySelector("#submitForm").addEventListener("click", (e) => {
         e.preventDefault();
 
         // show maps 
@@ -28,7 +31,7 @@ function initMap() {
 
 
     // GET Current Location 
-    infoWindow = new google.maps.InfoWindow();
+    const infoWindow = new google.maps.InfoWindow();
 
     const locationButton = document.createElement("button");
 
@@ -78,12 +81,10 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     directionsService
         .route({
             origin: {
-                // query: document.getElementById("start").value,
-                query: document.getElementById("search-value").value
+                query: shadowContainer.getElementById("search-value").value
             },
             destination: {
-                // query: document.getElementById("end").value,
-                query: document.getElementById("search-value-target").value
+                query: shadowContainer.getElementById("search-value-target").value
             },
             // Travel Mode Transit BUS
             travelMode: google.maps.TravelMode.TRANSIT,
@@ -93,3 +94,5 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
         })
         .catch((e) => window.alert("Directions request failed due to " + status));
 }
+
+window.initMap = initMap;

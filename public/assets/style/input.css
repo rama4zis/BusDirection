@@ -3,44 +3,24 @@
 @tailwind utilities;
 
 @layer base {
-  /* Bubble Messages */
-
-  .messages {
-    @apply w-full block;
-    /* margin-top: 1rem; */
-  }
-
-  .bubble {
-    @apply bg-slate-400 max-w-[35%] inline-block p-6 mb-1 rounded-full translate-x-[-100%] opacity-0;
-    /* transform: translateX(-200px); */
-  }
-
-  .message {
-    @apply text-white text-2xl font-medium;
-  }
-
-  .message a {
-    @apply underline text-blue-500;
-  }
-
-  .button-container {
-    @apply text-center pt-10 opacity-0;
-  }
-
-  .main-menu-button {
-    @apply rounded bg-blue-500 hover:bg-blue-700 py-2 px-4 text-white;
-  }
-
   body {
-    @apply bg-gray-800 h-screen w-screen box-border m-0;
+    @apply bg-gray-800 h-screen box-border m-0 pt-10;
   }
+
+  /* ============ Header section ============ */
+
+  .header-title {
+    @apply text-white text-center text-4xl font-bold;
+  }
+
+  /* =============== Content Wrapper =============== */
 
   .content-wrapper {
-    @apply h-full flex flex-col justify-center gap-10 opacity-0 pt-10;
+    @apply h-full flex flex-col justify-center gap-10;
   }
 
   .form-wrapper {
-    @apply w-1/2 bg-slate-400;
+    @apply w-full bg-slate-400;
     margin: 0 auto;
   }
 
@@ -49,7 +29,7 @@
   }
 
   .input-wrap input {
-    @apply p-2 w-[75vh];
+    @apply p-2 w-full; 
   }
 
   .nomor1 {
@@ -90,6 +70,8 @@
     @apply bg-slate-400;
   }
 
+  /* ========== MAP SECTION ========== */
+
   .map-container {
     @apply relative w-full h-[75vh] mb-8;
   }
@@ -115,7 +97,7 @@
     background: #ebebeb;
   }
 
-  .hide {
+  /* .hide {
     @apply hidden;
-  }
+  } */
 }
