@@ -64,6 +64,9 @@ class MainContainer extends HTMLElement {
     }
     
     .urban-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       position: absolute;
       display: flex;
       max-height: 10rem;
