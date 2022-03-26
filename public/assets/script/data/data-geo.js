@@ -4,8 +4,8 @@ let shadowroot = mainContainer.shadowRoot;
 if (mainContainer) {
 
     const baseUrl = "https://kodepos.now.sh";
-    var dataKota = [];
-    var dataKotaFix = [];
+    const dataKota = [];
+    const dataKotaFix = [];
     const searchValue = shadowroot.getElementById("search-value");
     const searchValueTarget = shadowroot.getElementById("search-value-target");
 
@@ -19,17 +19,17 @@ if (mainContainer) {
                 alert(responseJson.message);
             } else {
                 dataKota.push(...responseJson.data);
-                for (var i in dataKota) {
+                for (let i in dataKota) {
                     // console.log(i);
-                    for (var key in dataKota[i]) {
+                    for (let key in dataKota[i]) {
                         // Just Get Surabaya Data
                         if (dataKota[i][key] == "Surabaya") {
                             // console.log("Ini Surabaya");
 
                             // if dataKotaFix already have same postalcode, then do nothing
-                            var found = false;
-                            for (var j in dataKotaFix) {
-                                if (dataKotaFix[j].postalcode == dataKota[i].postalcode) {
+                            let found = false;
+                            for (let j in dataKotaFix) {
+                                if (dataKotaFix[j].postalcode === dataKota[i].postalcode) {
                                     found = true;
                                     break;
                                 }
@@ -58,7 +58,7 @@ if (mainContainer) {
 
         const kotaArrayLength = kotaArray.length;
 
-        for (var i = 0; i < kotaArrayLength; i++) {
+        for (let i = 0; i < kotaArrayLength; i++) {
             // console.log(kotaArray[i].subdistrict + kotaArray[i].urban);
             let kecamatan = kotaArray[i].subdistrict;
             let kelurahan = kotaArray[i].urban;
@@ -73,7 +73,7 @@ if (mainContainer) {
 
     const clearUrbanList = () => {
         const urbanList = shadowroot.querySelectorAll('.urban-list');
-        for (var i = 0; i < urbanList.length; i++) {
+        for (let i = 0; i < urbanList.length; i++) {
             urbanList[i].innerHTML = "";
         }
         // urbanList.innerHTML = '';
@@ -94,10 +94,10 @@ if (mainContainer) {
         clearUrbanList();
     };
 
-    var urbanItem = shadowroot.getElementById("urban-pick");
+    const urbanItem = shadowroot.getElementById("urban-pick");
     urbanItem.addEventListener('click', addValueToSearchValue);
 
-    var urbanItemTarget = shadowroot.getElementById("urban-target");
+    const urbanItemTarget = shadowroot.getElementById("urban-target");
     urbanItemTarget.addEventListener('click', addValueToSearchValueTarget);
 
     searchValue.addEventListener('input', (e) => {

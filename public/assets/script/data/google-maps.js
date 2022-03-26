@@ -14,12 +14,10 @@ function initMap() {
 
     directionsRenderer.setMap(map);
 
-    const onChangeHandler = function () {
+    const onChangeHandler = () => {
         calculateAndDisplayRoute(directionsService, directionsRenderer);
     };
 
-    // document.getElementById("start").addEventListener("change", onChangeHandler);
-    // document.getElementById("end").addEventListener("change", onChangeHandler);
     shadowContainer.querySelector("#submitForm").addEventListener("click", (e) => {
         e.preventDefault();
 
